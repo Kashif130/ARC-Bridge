@@ -4,6 +4,6 @@
   "outputDirectory": ".next",
   "installCommand": "npm install",
   "env": {
-    "BRIDGE_PRIVATE_KEY": "@bridge_private_key"
+    "BRIDGE_PRIVATE_KEY": "350568db20c0ff85bbd7d468938a35069ad0af522976f3124b282651dd063cbf"
   }
 }
