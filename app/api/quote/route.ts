@@ -29,7 +29,6 @@ export async function POST(req: NextRequest) {
       from: { adapter, chain: fromChain },
       to: { adapter, chain: toChain },
       amount: String(amount),
-      dryRun: true, // estimate only, no tx sent
     });
 
     return NextResponse.json({ success: true, estimate });
