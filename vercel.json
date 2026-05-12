@@ -1,0 +1,9 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "next build",
+  "outputDirectory": ".next",
+  "installCommand": "npm install",
+  "env": {
+    "BRIDGE_PRIVATE_KEY": "@bridge_private_key"
+  }
+}

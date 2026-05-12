@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --arc-bg: #0c0e13;
+  --arc-card: #111318;
+  --arc-border: #1e2028;
+  --arc-accent: #3b82f6;
+  --arc-green: #22c55e;
+  --arc-text: #e2e8f0;
+  --arc-muted: #64748b;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background: var(--arc-bg);
+  color: var(--arc-text);
+  font-family: "Syne", sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--arc-card);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--arc-border);
+  border-radius: 4px;
+}
+
+/* Glowing border effect */
+.glow-border {
+  border: 1px solid transparent;
+  background: linear-gradient(var(--arc-card), var(--arc-card)) padding-box,
+    linear-gradient(135deg, #3b82f6 0%, #1e40af 50%, #3b82f6 100%) border-box;
+}
+
+.glow-blue {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.15), 0 0 40px rgba(59, 130, 246, 0.05);
+}
+
+/* Animated gradient bg */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animated-gradient {
+  background: linear-gradient(-45deg, #0c0e13, #111827, #0c1a2e, #0c0e13);
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+/* Noise texture overlay */
+.noise::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+/* Chain badge */
+.chain-badge {
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+}
+
+/* Input focus */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Status dots */
+.dot-live {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22c55e;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.2); }
+}
+
+/* Step progress */
+.step-line {
+  width: 1px;
+  background: linear-gradient(to bottom, #3b82f6, transparent);
+  margin: 4px auto;
+}
